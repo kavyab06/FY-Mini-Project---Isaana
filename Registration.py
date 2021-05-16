@@ -1,0 +1,30 @@
+def seller_register():
+    print("\n =======================================================================")
+    s_uid = input("\n\t     User ID : ")
+    s_name = input("\t     Name : ")
+    s_email  = input("\t     Email ID : ")
+    s_pno = int(input("\t     Phone Number : "))
+    s_dob = input("\t     Date of Birth : ")
+    s_passwd = input("\t     Password : ")
+    s_address = input("\t     Address :  ")
+    s_social_media = input("\t     Social Media Base : ")
+    print("\n =======================================================================")
+    print("\n\n Y O U R    A C C O U N T    H A S    B E E N    R E G I S T E R E D")
+    cursor.execute('''INSERT INTO SELLER
+    VALUES('{}','{}','{}',{},'{}','{}','{}','{}');'''.format(s_uid, s_name, s_email, s_pno, s_dob, s_passwd, s_address, s_social_media))
+    mydb.commit()
+
+def customer_register():
+    print("\n =======================================================================")
+    c_uid = input("\n\t     User ID : ")
+    c_name = input("\t     Name : ")
+    c_email = input("\t     Email ID : ")
+    c_pno = int(input("\t     Phone Number : "))
+    c_dob = input("\t     Date of Birth : ")
+    c_passwd = input("\t     Password : ")
+    c_address = input("\t Address : ")
+    print("\n =======================================================================")
+    print("\n\n Y O U R    A C C O U N T    H A S    B E E N    R E G I S T E R E D")
+    cursor.execute('''INSERT INTO CUSTOMER
+    VALUES('{}','{}','{}',{},'{}','{}','{}');'''.format(c_uid, c_name, c_email, c_pno, c_dob, c_passwd, c_address))
+    mydb.commit()
