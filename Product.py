@@ -21,3 +21,14 @@ def product_display():
     for i in prods:
         print("\n\n\tID:" , i[4] , "\tNAME :" , i[0] , "\tPRICE : Rs" , i[1] , "\n\tDESCRIPTION :" , i[3])
     print("\n * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * ")
+
+def seller_product_display():
+    print("\n * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * ")
+    print("\n *                             P R O D U C T S    D E T A I L S                                * ")
+    print("\n * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * ")
+    cursor.execute('''SELECT * FROM PRODUCT
+    WHERE P_QUAN != 0;''')
+    prods = cursor.fetchall()
+    for i in prods:
+        print("\n\n ID:" , i[4] , "\t NAME :" , i[0] , "\t PRICE : Rs" , i[1] , "\t Quantity : ", i[2] , "\n DESCRIPTION :" , i[3])
+    print("\n * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * ")
