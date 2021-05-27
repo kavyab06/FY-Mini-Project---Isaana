@@ -91,7 +91,7 @@ def __main__():
                         break
                 elif d == 4 :
                     clear()
-                    product_display()
+                    seller_product_display()
                     ch = int(input("Would you like to continue? (1:Yes ; 0:No) : "))
                     if ch == 1:
                         continue
